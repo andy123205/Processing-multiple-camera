@@ -1,0 +1,33 @@
+import processing.video.*; 
+
+Capture myCapture; 
+Capture myCapture2; 
+String[] captureDevices; 
+String camera = "Webcam C170";
+String camera2 = "Microsoft簧 LifeCam HD-5000";
+
+int width=320;
+int height=240;
+void setup() 
+{ 
+  size(width*2, height); 
+  println (Capture.list()); 
+  captureDevices = Capture.list(); 
+  
+  myCapture = new Capture(this, width, height, camera,30); 
+  myCapture.start();
+  myCapture2 = new Capture(this, width, height, camera2, 30); 
+  myCapture2.start();
+  
+} 
+
+void draw() { 
+  if (myCapture.available()) { 
+    myCapture.read(); 
+    image(myCapture,0,0);   
+  } 
+  if (myCapture2.available()) { 
+    myCapture2.read(); 
+    image(myCapture2,width,0);   
+  } 
+}
