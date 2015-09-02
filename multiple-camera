@@ -1,3 +1,7 @@
+//----------------I use "Capture.list()" to find out the name of the devices of the camera.
+//----------------You can see the name by "println (Capture.list())".
+//----------------Also,you can add more camera as your wish!
+//----------------2015/09/02 Andy Wang
 import processing.video.*; 
 
 Capture myCapture; 
